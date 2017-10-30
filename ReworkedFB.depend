@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1501334338 source:e:\petnica2k17\reworkedfb\reworkedfb\main.cpp
+	<iostream>
+	"model.h"
+	<vector>
+	<sstream>
+	<algorithm>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+
+1501330480 e:\petnica2k17\reworkedfb\reworkedfb\model.h
+
+1500068688 e:\petnica2k17\reworkedfb\reworkedfb\unittest.h
+
+1500071276 source:e:\petnica2k17\reworkedfb\reworkedfb\unittest.cpp
+	"unittest.h"
+	<iostream>
+	<fstream>
+	<cmath>
+
+1501331845 source:e:\petnica2k17\reworkedfb\reworkedfb\model.cpp
+	"model.h"
+	"unittest.h"
+	<algorithm>
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
