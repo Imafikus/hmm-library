@@ -57,7 +57,6 @@ void Model::computeAlpha()
         alpha[0][i] = P[i] * emissionProbs[X[0]][i];
         sumC += alpha[0][i];
     }
-
     C[0] = 1.0 / sumC;
 
     for (int i = 0; i < numberOfPossibleStatesZ; i++)
@@ -73,11 +72,13 @@ void Model::computeAlpha()
         {
             double zbir = 0;
 
-                for(int j = 0; j < numberOfPossibleStatesZ; j++)
-                    zbir += alpha[k-1][j] * transitionProbs[j][i];
+            for(int j = 0; j < numberOfPossibleStatesZ; j++)
+                zbir += alpha[k-1][j] * transitionProbs[j][i];
+
             alpha[k][i] =  zbir * emissionProbs[X[k]][i];
             sumC += alpha[k][i];
         }
+
         C[k] = 1.0 / sumC;
 
         for(int i = 0; i < numberOfPossibleStatesZ; i++)
@@ -331,7 +332,7 @@ void Model::setArrayX(int *m_X){X = m_X;}
 
 int Model::getIndexForZ()
 {
-    printP();
+    //printP();
    // cout << "stampam Pi" << endl;
 
     int limit = getNumberOfPossibleStatesZ();
@@ -372,9 +373,6 @@ int Model::getXFromE(int &currentZ)//picks X from col which is determined by Z,
 {
     int Z = currentZ;
 
-    //for(int i = 0; i < numberOfPossibleStatesX; i++)
-       // cout << emissionProbs[i][Z] << " ";
-    //cout << "Stampam za dato Z gore" << endl;
 
     int limit = getNumberOfPossibleStatesX();
     double *niz = new double[limit];
@@ -390,12 +388,7 @@ int Model::getXFromE(int &currentZ)//picks X from col which is determined by Z,
         if(1 - suma <= 0.0000000001) break;
         i++;
     }
-    //for(int i = 0; i < numberOfPossibleStatesX; i++)
-       /* cout << niz[i] << " ";
-    cout << endl;
-    cout << "Odstampao novi niz " << endl;*/
 
-    //srand(time(NULL));
 
     double r = randomSeed[1];//((double)rand() / RAND_MAX); // generating radnom value between 0 and 1
 
@@ -414,16 +407,12 @@ int Model::getXFromE(int &currentZ)//picks X from col which is determined by Z,
         i++;
     }
     delete[] niz;
-    //cout << "trazeni indeks za X je:" << index << endl;
     return index;
 }
 int Model::getZFromT(int &currentZ)//picks Z from col which is determined by currentZ,
 {
     int Z = currentZ;
 
-    //for(int i = 0; i < numberOfPossibleStatesZ; i++)
-        //cout << transitionProbs[Z][i] << " ";
-    //cout << "Stampam za dato Z gore" << endl;
 
     int limit = getNumberOfPossibleStatesZ();
     double *niz = new double[limit];
@@ -439,17 +428,10 @@ int Model::getZFromT(int &currentZ)//picks Z from col which is determined by cur
         if(1 - suma <= 0.0000000001) break;
         i++;
     }
-   // for(int i = 0; i < numberOfPossibleStatesZ; i++)
-       /* cout << niz[i] << " ";
-    cout << endl;
-    cout << "Odstampao novi niz " << endl;*/
-
-    //srand(time(NULL));
-    double r = randomSeed[2];//((double)rand() / RAND_MAX); // generating radnom value between 0 and 1
+    double r = randomSeed[2];// generating radnom value between 0 and 1
 
     int index;
 
-    //cout << "radnom vrednost: " << r << endl;
     i = 0;
     bool foundIt = false;
     while((i < numberOfPossibleStatesZ) && (foundIt == false))
@@ -462,7 +444,6 @@ int Model::getZFromT(int &currentZ)//picks Z from col which is determined by cur
         i++;
     }
     delete[] niz;
-    //cout << "trazeni indeks za Z je:" << index << endl;
     return index;
 }
 void Model::testPi()

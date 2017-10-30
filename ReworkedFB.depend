@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1501334338 source:e:\petnica2k17\reworkedfb\reworkedfb\main.cpp
+1501674462 source:e:\petnica2k17\reworkedfb\reworkedfb\main.cpp
 	<iostream>
 	"model.h"
 	<vector>
@@ -19,11 +19,67 @@
 	<fstream>
 	<cmath>
 
-1501331845 source:e:\petnica2k17\reworkedfb\reworkedfb\model.cpp
+1501674687 source:e:\petnica2k17\reworkedfb\reworkedfb\model.cpp
 	"model.h"
 	"unittest.h"
 	<algorithm>
 	<iostream>
 	<time.h>
 	<stdlib.h>
+
+1503650522 source:e:\petnica\petnica2k17\projekat 2k17\code\reworkedfb\reworkedfb\main.cpp
+	<iostream>
+	"model.h"
+	<vector>
+	<sstream>
+	<algorithm>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+
+1501326880 e:\petnica\petnica2k17\projekat 2k17\code\reworkedfb\reworkedfb\model.h
+
+1501671087 source:e:\petnica\petnica2k17\projekat 2k17\code\reworkedfb\reworkedfb\model.cpp
+	"model.h"
+	"unittest.h"
+	<algorithm>
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
+1500065088 e:\petnica\petnica2k17\projekat 2k17\code\reworkedfb\reworkedfb\unittest.h
+
+1500067676 source:e:\petnica\petnica2k17\projekat 2k17\code\reworkedfb\reworkedfb\unittest.cpp
+	"unittest.h"
+	<iostream>
+	<fstream>
+	<cmath>
+
+1503650522 source:e:\projects\hmm-library\main.cpp
+	<iostream>
+	"model.h"
+	<vector>
+	<sstream>
+	<algorithm>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+
+1501326880 e:\projects\hmm-library\model.h
+
+1501671087 source:e:\projects\hmm-library\model.cpp
+	"model.h"
+	"unittest.h"
+	<algorithm>
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
+1500065088 e:\projects\hmm-library\unittest.h
+
+1500067676 source:e:\projects\hmm-library\unittest.cpp
+	"unittest.h"
+	<iostream>
+	<fstream>
+	<cmath>
 

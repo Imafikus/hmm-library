@@ -8,10 +8,10 @@
 #include <time.h>
 #include <stdlib.h>
 
-const int MAX_SIZE_X = 10000;
+const int MAX_SIZE_X = 10000; // maximum size of array
 
 using namespace std;
-void initialization(int &observedVars, int &statesZ, int &statesX, int * &X, double * &Pi, double ** &E, double ** &T)
+void initialization(int &observedVars, int &statesZ, int &statesX, int * &X, double * &Pi, double ** &E, double ** &T)//initialization of everything
 {
     X = new int[MAX_SIZE_X];
     Pi = new double[statesZ];
@@ -32,9 +32,9 @@ void getInitialValues(int &observedVars, int &statesZ, int &statesX, int * &X, d
 {
     srand(time(NULL));
 
-    statesZ  = 5;
+    statesZ  = 7;
     iter = 10000;
-    statesX = 5;
+    statesX = 6;
     observedVars = 300;
 
     ifstream inf(input);
@@ -111,7 +111,7 @@ void getInitialValues(int &observedVars, int &statesZ, int &statesX, int * &X, d
         }
     }
 }
-void runMethodOne()
+void runMethodOne()// predicts next move in the maze crawling
 {
 vector<int> v;
 
@@ -169,43 +169,44 @@ vector<int> v;
 int main()
 {
     int expectedState;
-        int observedVars;
-        int statesZ;
-        int statesX;
-        int * X;
-        double * Pi;
-        double ** E;
-        double ** T;
-        int iter;
-        string input = "kretanje.txt";
+    int observedVars;
+    int statesZ;
+    int statesX;
+    int * X;
+    double * Pi;
+    double ** E;
+    double ** T;
+    int iter;
+    string input = "makePlus.txt";
 
-        getInitialValues(observedVars,statesZ, statesX, X, Pi, E, T, iter, input, expectedState);
+    getInitialValues(observedVars,statesZ, statesX, X, Pi, E, T, iter, input, expectedState);
 
-        Model model(observedVars, statesZ, statesX, X, Pi, T, E, iter);
-        model.testPi();
-        cout << endl;
+    Model model(observedVars, statesZ, statesX, X, Pi, T, E, iter);
 
-        model.getRandom();
+    model.testPi();
+    cout << endl;
 
-        ofstream predictedMovements("predikcija.txt");
+    model.getRandom();
 
-        int firstZ = model.getIndexForZ();
+    ofstream predictedMovements("predictPlus.txt");
 
-        int nextZ = model.getZFromT(firstZ);
+    int firstZ = model.getIndexForZ();
 
-        for(int i = 0; i < 100; i++)
-        {
-           // model.getRandom();
+    int nextZ = model.getZFromT(firstZ);
 
-            int currentX = model.getXFromE(nextZ);
+    for(int i = 0; i < 100; i++)
+    {
+       // model.getRandom();
 
-            predictedMovements << currentX << endl;
+        int currentX = model.getXFromE(nextZ);
 
-            nextZ = model.getZFromT(nextZ);
+        predictedMovements << currentX << endl;
 
-            cout << "iteracija: " << i << endl;
+        nextZ = model.getZFromT(nextZ);
 
-        }
+        cout << "iteracija: " << i << endl;
+
+    }
 
 }
 
