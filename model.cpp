@@ -308,11 +308,11 @@ void Model::setNumberOfObservedVars(int m_setNumberOfObservedVars){numberOfObser
 
 
 int Model::getNumberOfPossibleStatesZ(){return numberOfPossibleStatesZ;}
-void Model::setNumberOfPossibleStatesZ(int m_setNumberOfPossibleStatesZ){numberOfPossibleStatesZ =m_setNumberOfPossibleStatesZ;}
+void Model::setNumberOfPossibleStatesZ(int m_setNumberOfPossibleStatesZ){numberOfPossibleStatesZ = m_setNumberOfPossibleStatesZ;}
 
 
 int Model::getNumberOfPossibleStatesX(){return numberOfPossibleStatesX;}
-void Model::setNumberOfPossibleStatesX(int m_setNumberOfPossibleStatesX){numberOfPossibleStatesX =m_setNumberOfPossibleStatesX;}
+void Model::setNumberOfPossibleStatesX(int m_setNumberOfPossibleStatesX){numberOfPossibleStatesX = m_setNumberOfPossibleStatesX;}
 
 
 double *Model::getP(){return P;}
@@ -332,9 +332,6 @@ void Model::setArrayX(int *m_X){X = m_X;}
 
 int Model::getIndexForZ()
 {
-    //printP();
-   // cout << "stampam Pi" << endl;
-
     int limit = getNumberOfPossibleStatesZ();
     double *niz = new double[limit];
 

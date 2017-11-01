@@ -177,37 +177,16 @@ int main()
     double ** E;
     double ** T;
     int iter;
-    string input = "makePlus.txt";
+    string input = "example.txt";
 
     getInitialValues(observedVars,statesZ, statesX, X, Pi, E, T, iter, input, expectedState);
 
     Model model(observedVars, statesZ, statesX, X, Pi, T, E, iter);
 
     model.testPi();
-    cout << endl;
 
-    model.getRandom();
-
-    ofstream predictedMovements("predictPlus.txt");
-
-    int firstZ = model.getIndexForZ();
-
-    int nextZ = model.getZFromT(firstZ);
-
-    for(int i = 0; i < 100; i++)
-    {
-       // model.getRandom();
-
-        int currentX = model.getXFromE(nextZ);
-
-        predictedMovements << currentX << endl;
-
-        nextZ = model.getZFromT(nextZ);
-
-        cout << "iteracija: " << i << endl;
-
-    }
-
+    cout << "KURCINA" << endl;
+    model.printEmission();
 }
 
 
